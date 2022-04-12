@@ -140,8 +140,27 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
 */  
 
 function hungryDog(weight, age){
-  
-}
+  if (age < 1){
+      if (age >= 2/12 && age < 4/12) {
+        return weight * .1;
+      } else if (age >= 4/12 && age < 7/12) {
+        return weight * .05
+      } else if (age >= 7/12) {
+        return weight * .04
+      }
+  } else {
+      if (weight <= 5) {
+        return weight * .05;
+      } else if (weight <= 10){
+        return weight * .04;
+      } else if (weight <= 15) {
+        return weight * .03;
+      } else {
+        return weight * .02;
+      }
+    }
+  } 
+
 
 
 
@@ -165,9 +184,27 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
-
+let computerChoice = Math.floor(Math.random() * 3);
+if(computerChoice === 0){
+  computerChoice = "rock";
+} else if (computerChoice === 1){
+  computerChoice = "paper";
+} else {
+  computerChoice = "scissors";
+}
+console.log(computerChoice);
 function game(user, computer){
-  /*add your code here*/
+  if (computer === user) {
+    return "it's a tie";
+  } else if (user === 'rock' && computer === 'paper'){
+    return "you lose!";
+  } else if (user === 'paper' && computer === 'scissors'){
+    return "you lose!";
+  } else if (user === 'scissors' && computer === 'rock') {
+    return "you lose!";
+  } else {
+    return "you win!";
+  }
 }
 
 
