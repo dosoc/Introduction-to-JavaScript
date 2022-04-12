@@ -220,8 +220,8 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilometers){
+  return kilometers * 0.621371;
 }
 
 
@@ -234,8 +234,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(CM){
+  return CM / 30.48;
 }
 
 
@@ -254,10 +254,13 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num){
+      return `${num} bottles of soda on the wall, ${num} bottles of soda, take one down pass it around ${num-1} bottles of soda on the wall`
 }
-
+const bottles = 10;
+for (let i = bottles; i > 1; i--) {
+  console.log(annoyingSong(i));
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -274,7 +277,18 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
+function grade(num){
+  if (num < 60) {
+    return 'you got an F';
+  } else if (num < 70) {
+    return 'you got a D'
+  } else if (num < 80) {
+    return 'you got a C'
+  } else if (num < 90) {
+    return 'you got a B'
+  } else {
+    return 'you got an A'
+  }
 /*Your Code here */
 }
 
@@ -293,10 +307,11 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(string) {
+  let vowels = ['a','e','i','o','u']
+  let vowArray = string.toLowerCase().split('').filter(letter => vowels.includes(letter))
+  return vowArray.length;
 }
-
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
